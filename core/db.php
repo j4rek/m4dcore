@@ -174,27 +174,46 @@ class db {
 	 * @return void
 	 */
 	static function msQuery($sqlstr, $mostrar=0) {
-
+		$obj=new stdClass();
+		$obj->rows=array();
+		$obj->count=0;
+		
+		//Si no existe conexion, genera una.
 		if ($conexion==null) {
 			$conexion=self::msConectar();
 		}
-
+		
+		//ejecuta la consulta sql
 		$res = mssql_query($sqlstr, $conexion);
-		if ($mostrar==1)
-			echo mensajes::msg($sqlstr);
+		
+		//imprime la consulta por pantalla
+		if ($mostrar==1) {
+			echo mensajes::msg($sqlstr, true);
+		}
 
-		if (!$res) {
-			if (config::debug) {
-				die(mensajes::error_db(100, $sqlstr."<br>".mysql_error()));
-			}
-			else {
-				header("location: ./");
+		if (!$res) {//si no hay respuesta o error en la ejecucion
+			if (config::debug) { // si el debug esta activo
+				$_arr=debug_backtrace(); // imprime la consulta mas el error
+				die(mensajes::error_db(100, $sqlstr."<br>".mssql_error()."<br><br>Arc:".$_arr[0]["file"]."<br>linea:".$_arr[0]["line"]));
+			}else { // si el debug esta inactivo, redirecciona a la pagina principal
+				header("location: ".config::URLBASE);
 				exit();
 			}
+		}else { // si hay respuesta
+			$i=0;
+			$obj->count=mssql_num_rows($res);
+			while ($row=mssql_fetch_array($res)) {
+				if ($i==($obj->count-1)) {
+					$key="LAST";
+				}else {
+					$key=$i;
+				}
+				array_push($obj->rows, ($row));
+				$i++;
+			}
 		}
-		return $res;
-		//$this->cerrar_conexion($conx);
 
+		return $obj;
 	}
 	
 	/**
