@@ -1,4 +1,4 @@
-## m4dcore PHP Framework
+## M4dCore PHP Framework
 
 [![Última version estable]()](https://www.m4dsource.com)
 [![Última version inestable]()](https://www.m4dsource.com)
@@ -23,8 +23,8 @@ Utility:
 
 ## Official Documentation
 
-La documentacion del proyecto esta en progreso, lo podrás encontrar en [CDN M4dsource](http://cdn.m4dsource.com/docs).
+La documentación del proyecto esta en progreso, lo podrás encontrar en [CDN M4dsource](http://cdn.m4dsource.com/docs).
 
 ### License
 
-M4dcore es opensource.
+M4dCore es opensource.
