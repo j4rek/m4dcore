@@ -17,7 +17,7 @@ Template:
 
 ## Official Documentation
 
-La documentacion del proyecto esta en progreso, lo podrás encontrar en [Laravel website](http://laravel.com/docs).
+La documentacion del proyecto esta en progreso, lo podrás encontrar en [CDN M4dsource](http://cdn.m4dsource.com/docs).
 
 ### License
 
