@@ -13,6 +13,12 @@ Mensajes:
 Template:
 	- administra los datos para imprimir en las vistas
 	
+DB:
+	- ORM basico
+
+Utility:
+	- Serie de funciones comunes para manejo de datos simples, fechas, formatos de texto, etc.
+	
 
 
 ## Official Documentation
