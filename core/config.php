@@ -28,7 +28,7 @@ class config {
 	const SMTP_PASS="zoom2012";
 
 	//# -- Constantes URLS del sitio -- ##
-	const URLBASE="http://localhost/cgames/comunitygames";
+	const URLBASE="http://localhost/repo/m4dcore/";
 	const DOMADMIN="http://panel.delosurales.com/";
 	const DOMSTATIC="http://localhost/cgames/comunitygames/static/";
 	//const DOMSTATIC="http://static.delosurales.com/";
@@ -44,9 +44,9 @@ class config {
 	const repoImagenesExposiciones="expos/";
 	const repoImagenesNoticias="noticias/";
 	const log="/home/Zoom/sites/www/lib/logs/";
-	const controladores="/Library/WebServer/Documents/cgames/comunitygames/controller/";
-	const vistas="/Library/WebServer/Documents/cgames/comunitygames/view/";
-	const modelos="/Library/WebServer/Documents/cgames/comunitygames/model/";
+	const controladores="/Library/WebServer/Documents/repo/m4dcore/controller/";
+	const vistas="/Library/WebServer/Documents/repo/m4dcore/view/";
+	const modelos="/Library/WebServer/Documents/repo/m4dcore/model/";
 
 	//# -- Caracteristicas para imagenes -- ##
 	const anchoMax=800; //PIXELES

@@ -21,13 +21,15 @@ class core {
 	/**
 	 * set function.
 	 *
-	 *
 	 * @access public
 	 * @static
-	 * @param string $route
 	 * @return el metodo del objeto instanciado
 	 */
-	public static function set($route) {
+	public static function set() {
+		//Rescatar y analizar los parametros para evitar SQLINY
+		$_GET = utility::checkVars($_GET);
+		$route=isset($_GET["path"]) ? $_GET["path"]:"home";
+
 		//seteando el metodo a invocar y el controlador necesario
 		$_set=explode("/", $route);
 		$_modulo=$_set[0];
